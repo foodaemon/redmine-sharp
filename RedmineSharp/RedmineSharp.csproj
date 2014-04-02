@@ -44,6 +44,13 @@
     <Compile Include="Resources\ProjectResource.cs" />
     <Compile Include="Types\Project.cs" />
     <Compile Include="RedmineClient.cs" />
+    <Compile Include="Resources\IssueResource.cs" />
+    <Compile Include="Types\Issue.cs" />
+    <Compile Include="Types\Priority.cs" />
+    <Compile Include="Types\Author.cs" />
+    <Compile Include="Types\Status.cs" />
+    <Compile Include="Types\Tracker.cs" />
+    <Compile Include="Models\IssueList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

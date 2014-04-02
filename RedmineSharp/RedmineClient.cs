@@ -5,12 +5,11 @@ namespace RedmineSharp
 {
 	public class RedmineClient
 	{
-		public string Protocol { get; set; }
 		/// <summary>
-		/// Gets or sets a value indicating whether this <see cref="RedmineSharp.RedmineClient"/> use https.
+		/// Gets or sets the protocol.
 		/// </summary>
-		/// <value><c>true</c> if use https; otherwise, <c>false</c>.</value>
-		public bool UseHttps { get; set; }
+		/// <value>http or https</value>
+		public string Protocol { get; set; }
 
 		/// <summary>
 		/// Gets or sets the redmine URI.
@@ -24,19 +23,26 @@ namespace RedmineSharp
 		/// <value>The redmine port.</value>
 		public int RedminePort { get; set; }
 
-		public RedmineClient ()
+		/// <summary>
+		/// Gets or sets the API key.
+		/// </summary>
+		/// <value>The API key.</value>
+		public string ApiKey { get; set; }
+
+
+		public RedmineClient (string redmineUri, string apiKey, bool useHttps = false)
 		{
-			Protocol = UseHttps? "https" : "http";
-			RedmineUri = "redmineuri.com/";
+			Protocol = useHttps? "https" : "http";
+			RedmineUri = redmineUri;
+			ApiKey = apiKey;
 		}
 
 		public RestResponse SendRequest(RestRequest request)
 		{
-			var client = new RestClient (Protocol + "://" + RedmineUri);
+			var client = new RestClient (Protocol + "://" + RedmineUri + "/");
 			request.AddHeader ("Content-Type", "application/json");
-			request.AddParameter ("key", "your_redmine_key");
 			request.AddParameter ("format", "json");
-
+			request.AddParameter ("key", ApiKey); //bce2ece43c06ecd151319bb70c85de312f5ef063
 			return client.Execute (request) as RestResponse;
 		}
 

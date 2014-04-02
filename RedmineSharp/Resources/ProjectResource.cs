@@ -7,17 +7,22 @@ namespace RedmineSharp.Resources
 {
 	public class ProjectResource
 	{
-		public string Resource 
-		{ 
-			get { return "projects"; } 
-		} 
+		private readonly RedmineClient _redmineClient;
 
-		public ProjectList GetAllProjects()
+		private const string _resource = "projects";
+
+		public ProjectResource(string redmineUri, string apiKey, bool useHttps = false)
 		{
-			var redmineClient = new RedmineClient();
-			var request = new RestRequest (Resource, Method.GET);
+			_redmineClient = new RedmineClient (redmineUri, apiKey, useHttps);
+		}
 
-			var response = redmineClient.SendRequest (request);
+		public ProjectList GetAllProjects(int offset = 0, int limit = 25)
+		{
+			var request = new RestRequest (_resource, Method.GET);
+			request.AddParameter ("offset", offset);
+			request.AddParameter ("limit", limit);
+
+			var response = _redmineClient.SendRequest (request);
 
 			var projectList = JsonConvert.DeserializeObject<ProjectList> (response.Content);
 
