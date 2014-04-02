@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedmineSharp", "RedmineSharp\RedmineSharp.csproj", "{712A398F-4033-43C7-B8D4-7750A2D5B0FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedmineSharpTest", "RedmineSharpTest\RedmineSharpTest.csproj", "{5D72D3DA-0EF9-4CD7-A3F3-994FC3BBAE09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D72D3DA-0EF9-4CD7-A3F3-994FC3BBAE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D72D3DA-0EF9-4CD7-A3F3-994FC3BBAE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D72D3DA-0EF9-4CD7-A3F3-994FC3BBAE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D72D3DA-0EF9-4CD7-A3F3-994FC3BBAE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{712A398F-4033-43C7-B8D4-7750A2D5B0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{712A398F-4033-43C7-B8D4-7750A2D5B0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{712A398F-4033-43C7-B8D4-7750A2D5B0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{712A398F-4033-43C7-B8D4-7750A2D5B0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = RedmineSharp\RedmineSharp.csproj
+	EndGlobalSection
+EndGlobal
